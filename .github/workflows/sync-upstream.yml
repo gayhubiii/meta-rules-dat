@@ -3,7 +3,7 @@ name: Sync upstream
 on:
   workflow_dispatch:
   schedule:
-    - cron: "20 20 * * *" # 04:20 UTC+8
+    - cron: "*/5 * * * *" # temporary: every 5 minutes to trigger now
 
 permissions:
   contents: write
