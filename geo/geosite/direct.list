@@ -1,0 +1,6 @@
+# custom: rule.yaml (do not overwrite)
+include:private
+include:cn
+include:apple-cn
+include:steam@cn
+include:tracker

@@ -1,0 +1,15 @@
+# custom: rule.yaml (do not overwrite)
+include:geolocation-!cn
+include:whatsapp
+include:google
+include:microsoft
+include:facebook
+include:twitter
+include:line
+include:discord
+include:dropbox
+include:imgur
+include:pinterest
+include:quora
+include:reddit
+include:github

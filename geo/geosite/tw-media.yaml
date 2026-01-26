@@ -1,0 +1,7 @@
+payload:
+    # custom: rule.yaml (do not overwrite)
+    - include:bahamut
+    - include:kktv
+    - include:litv
+    - include:kkbox
+    - include:line
