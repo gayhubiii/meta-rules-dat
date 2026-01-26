@@ -62,3 +62,5 @@ payload:
     - DOMAIN-SUFFIX,hbo.map.fastly.net
     - DOMAIN-SUFFIX,hbomaxdash.s.llnwi.net
     - DOMAIN-SUFFIX,hbo.com.c.footprint.net
+    # custom: rule.yaml (do not overwrite)
+    - include:hbo-fix

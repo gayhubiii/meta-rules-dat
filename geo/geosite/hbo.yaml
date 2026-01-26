@@ -62,3 +62,5 @@ payload:
     - +.hbo.map.fastly.net
     - +.hbomaxdash.s.llnwi.net
     - +.hbo.com.c.footprint.net
+    # custom: rule.yaml (do not overwrite)
+    - include:hbo-fix

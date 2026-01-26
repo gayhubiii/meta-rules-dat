@@ -5,3 +5,5 @@ payload:
     - +.claude.com
     - +.claudeusercontent.com
     - +.claudemcpclient.com
+    # custom: rule.yaml (do not overwrite)
+    - include:anthropic-fix

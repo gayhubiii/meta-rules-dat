@@ -2,3 +2,5 @@ payload:
     - +.grazie.ai
     - +.jetbrains.ai
     - +.grazie.aws.intellij.net
+    # custom: rule.yaml (do not overwrite)
+    - include:jetbrains-ai-fix
