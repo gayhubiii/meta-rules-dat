@@ -299,7 +299,7 @@ jobs:
           echo "full:o33249.ingest.sentry.io" >>  ./data-lite/openai
           echo "openai.com" >> ./data-lite/openai
           set -euo pipefail
-          for src in ./geo-lite/geosite/classical/*.list; do
+          for src in ../geo-lite/geosite/classical/*.list; do
             [ -f "$src" ] || continue
             name=$(basename "$src" .list)
             dst="./community/data-lite/${name}"
