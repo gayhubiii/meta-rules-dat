@@ -1,0 +1,4 @@
+payload:
+    # custom: rule.yaml (do not overwrite)
+    - +.grazie.ai
+    - +.grazie.aws.intellij.net

@@ -1,0 +1,4 @@
+# custom: rule.yaml (do not overwrite)
+DOMAIN-SUFFIX,grazie.ai
+DOMAIN-SUFFIX,grazie.aws.intellij.net
+DOMAIN-KEYWORD,jetbrains.ai

@@ -1565,3 +1565,5 @@ payload:
     - DOMAIN-KEYWORD,icloud.com.akadns.net
     - DOMAIN-KEYWORD,smp-device
     - DOMAIN-KEYWORD,testflight
+    # custom: rule.yaml (do not overwrite)
+    - DOMAIN,www-cdn.icloud.com.akadns.net

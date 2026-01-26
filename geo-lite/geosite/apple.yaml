@@ -1558,3 +1558,5 @@ payload:
     - icons.axm-usercontent-apple.com
     - lookup-api.apple.com.edgekey.net
     - p-events-delivery.akamaized.net
+    # custom: rule.yaml (do not overwrite)
+    - www-cdn.icloud.com.akadns.net

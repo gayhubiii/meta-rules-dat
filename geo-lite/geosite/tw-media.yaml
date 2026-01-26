@@ -1,0 +1,22 @@
+payload:
+    # custom: rule.yaml (do not overwrite)
+    - +.bahamut.com.tw
+    - +.gamer.com.tw
+    - +.kktv.com.tw
+    - +.kktv.me
+    - +.litv.tv
+    - +.d3c7rimkq79yfu.cloudfront.net
+    - +.linetv.tw
+    - +.profile.line-scdn.net
+    - +.kfs.io
+    - +.kkbox.com
+    - +.kkbox.com.tw
+    - +.skyking.com.tw
+    - bahamut.akamaized.net
+    - gamer-cds.cdn.hinet.net
+    - gamer2-cds.cdn.hinet.net
+    - kktv-theater.kk.stream
+    - theater-kktv.cdn.hinet.net
+    - litvfreemobile-hichannel.cdn.hinet.net
+    - d3c7rimkq79yfu.cloudfront.net
+    - hamifans.emome.net

@@ -30,3 +30,8 @@ payload:
     - openaicomproductionae4b.blob.core.windows.net
     - production-openaicom-storage.azureedge.net
     - static.cloudflareinsights.com
+    # custom: rule.yaml (do not overwrite)
+    - +.chat.com
+    - +.sora.com
+    - cdn.usefathom.com
+    - challenges.cloudflare.com

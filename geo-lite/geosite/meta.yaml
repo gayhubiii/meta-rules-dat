@@ -1,0 +1,4 @@
+payload:
+    # custom: rule.yaml (do not overwrite)
+    - +.meta.ai
+    - imagine.meta.com

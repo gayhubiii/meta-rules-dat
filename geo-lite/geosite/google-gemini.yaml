@@ -1,0 +1,19 @@
+payload:
+    # custom: rule.yaml (do not overwrite)
+    - +.google.com
+    - +.deepmind.com
+    - +.deepmind.google
+    - +.generativeai.google
+    - +.gemini.google
+    - +.jules.google
+    - +.labs.google
+    - +.proactivebackend-pa.googleapis.com
+    - +.geller-pa.googleapis.com
+    - +.generativelanguage.googleapis.com
+    - +.robinfrontend-pa.googleapis.com
+    - +.aisandbox-pa.googleapis.com
+    - +.notebooklm.google
+    - +.notebooklm.google.com
+    - ai.google.dev
+    - notebooklm-pa.googleapis.com
+    - notebooklm.googleapis.com

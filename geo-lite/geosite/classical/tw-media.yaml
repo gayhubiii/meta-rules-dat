@@ -1,0 +1,22 @@
+payload:
+    # custom: rule.yaml (do not overwrite)
+    - DOMAIN-SUFFIX,bahamut.com.tw
+    - DOMAIN-SUFFIX,gamer.com.tw
+    - DOMAIN-SUFFIX,kktv.com.tw
+    - DOMAIN-SUFFIX,kktv.me
+    - DOMAIN-SUFFIX,litv.tv
+    - DOMAIN-SUFFIX,d3c7rimkq79yfu.cloudfront.net
+    - DOMAIN-SUFFIX,linetv.tw
+    - DOMAIN-SUFFIX,profile.line-scdn.net
+    - DOMAIN-SUFFIX,kfs.io
+    - DOMAIN-SUFFIX,kkbox.com
+    - DOMAIN-SUFFIX,kkbox.com.tw
+    - DOMAIN-SUFFIX,skyking.com.tw
+    - DOMAIN,bahamut.akamaized.net
+    - DOMAIN,gamer-cds.cdn.hinet.net
+    - DOMAIN,gamer2-cds.cdn.hinet.net
+    - DOMAIN,kktv-theater.kk.stream
+    - DOMAIN,theater-kktv.cdn.hinet.net
+    - DOMAIN,litvfreemobile-hichannel.cdn.hinet.net
+    - DOMAIN,d3c7rimkq79yfu.cloudfront.net
+    - DOMAIN,hamifans.emome.net

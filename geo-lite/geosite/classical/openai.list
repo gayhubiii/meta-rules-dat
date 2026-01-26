@@ -30,3 +30,8 @@ DOMAIN,openaicomproductionae4b.blob.core.windows.net
 DOMAIN,production-openaicom-storage.azureedge.net
 DOMAIN,static.cloudflareinsights.com
 DOMAIN-KEYWORD,openai
+# custom: rule.yaml (do not overwrite)
+DOMAIN-SUFFIX,chat.com
+DOMAIN-SUFFIX,sora.com
+DOMAIN,cdn.usefathom.com
+DOMAIN,challenges.cloudflare.com

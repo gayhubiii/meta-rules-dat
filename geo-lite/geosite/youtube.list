@@ -177,3 +177,7 @@
 +.youtubemobilesupport.com
 +.yt.be
 +.ytimg.com
+# custom: rule.yaml (do not overwrite)
+youtubei.googleapis.com
+yt3.ggpht.com
+music.youtube.com

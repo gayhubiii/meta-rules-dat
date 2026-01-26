@@ -1,0 +1,7 @@
+# custom: rule.yaml (do not overwrite)
++.anthropic.com
++.claude.ai
++.claude.com
++.claudeusercontent.com
++.claudemcpclient.com
+servd-anthropic-website.b-cdn.net

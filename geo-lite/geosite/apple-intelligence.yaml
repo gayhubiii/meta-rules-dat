@@ -1,0 +1,8 @@
+payload:
+    # custom: rule.yaml (do not overwrite)
+    - +.apple-relay.apple.com
+    - +.apple-relay.cloudflare.com
+    - +.smoot.apple.com
+    - gspe1-ssl.ls.apple.com
+    - guzzoni.apple.com
+    - cp4.cloudflare.com

@@ -31,3 +31,5 @@ payload:
     - +.us-west-2.amazonaws.com
     - e13252.dscg.akamaiedge.net
     - h-netflix.online-metrix.net
+    # custom: rule.yaml (do not overwrite)
+    - netflix.com.edgesuite.net

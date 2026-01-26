@@ -1,0 +1,4 @@
+payload:
+    # custom: rule.yaml (do not overwrite)
+    - DOMAIN-SUFFIX,meta.ai
+    - DOMAIN,imagine.meta.com

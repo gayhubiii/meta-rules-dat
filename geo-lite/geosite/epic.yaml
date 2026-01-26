@@ -1,0 +1,7 @@
+payload:
+    # custom: rule.yaml (do not overwrite)
+    - +.epicgames.com
+    - +.epicgames.dev
+    - +.helpshift.com
+    - +.paragon.com
+    - +.unrealengine.com
