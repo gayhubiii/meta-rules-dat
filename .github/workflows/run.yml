@@ -5,7 +5,7 @@ on:
     - cron: "30 22 * * *" # 6:30 AM UTC+8
   push:
     branches:
-      - master
+      - meta
     paths-ignore:
       - "**/README.md"
 jobs:
@@ -29,7 +29,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: MetaCubeX/meta-rules-dat
+          repository: ${{ github.repository }}
+          ref: meta
 
       - name: Checkout Loyalsoldier/domain-list-custom
         uses: actions/checkout@v4
@@ -42,6 +43,101 @@ jobs:
         with:
           repository: v2fly/domain-list-community
           path: community
+
+      - name: Add custom geosite lists
+        run: |
+          cat > ./community/data/tw-media <<'EOF'
+          # custom: rule.yaml (do not overwrite)
+          include:bahamut
+          include:kktv
+          include:litv
+          include:kkbox
+          include:line
+          EOF
+
+          cat > ./community/data/proxy <<'EOF'
+          # custom: rule.yaml (do not overwrite)
+          include:geolocation-!cn
+          include:whatsapp
+          include:google
+          include:microsoft
+          include:facebook
+          include:twitter
+          include:line
+          include:discord
+          include:dropbox
+          include:imgur
+          include:pinterest
+          include:quora
+          include:reddit
+          include:github
+          EOF
+
+          cat > ./community/data/direct <<'EOF'
+          # custom: rule.yaml (do not overwrite)
+          include:private
+          include:cn
+          include:apple-cn
+          include:steam@cn
+          include:tracker
+          EOF
+
+      - name: Sync custom *-fix lists into community data
+        run: |
+          set -euo pipefail
+          for src in ./geo/geosite/classical/*-fix.list; do
+            [ -f "$src" ] || continue
+            name=$(basename "$src" .list)
+            base=${name%-fix}
+            dst="./community/data/${name}"
+            base_dst="./community/data/${base}"
+
+            converted=$(sed -e 's/^DOMAIN-SUFFIX,/domain:/g' \
+                            -e 's/^DOMAIN,/full:/g' \
+                            -e 's/^DOMAIN-KEYWORD,/keyword:/g' "$src" | \
+                        grep -E '^(domain|full|keyword):')
+            if [ -n "$converted" ]; then
+              {
+                echo "# custom: rule.yaml (do not overwrite)"
+                echo "$converted"
+              } > "$dst"
+            fi
+
+            if [ -f "$base_dst" ] && ! grep -q "^include:${name}$" "$base_dst"; then
+              echo "include:${name}" >> "$base_dst"
+            fi
+          done
+
+      - name: Inject custom additions into community lists
+        run: |
+          set -euo pipefail
+          LISTS="google-gemini apple-intelligence xai jetbrains-ai meta"
+          for name in $LISTS; do
+            src="./geo/geosite/classical/${name}.list"
+            dst="./community/data/${name}"
+            if [ ! -f "$src" ]; then
+              continue
+            fi
+            # Extract only lines after the custom marker.
+            custom_lines=$(awk 'found{print} /custom: rule.yaml/{found=1;next}' "$src" || true)
+            if [ -z "$custom_lines" ]; then
+              continue
+            fi
+            # Convert to domain-list-community syntax.
+            converted=$(echo "$custom_lines" | \
+              grep -v '^include:' | \
+              sed -e 's/^DOMAIN-SUFFIX,/domain:/g' \
+                  -e 's/^DOMAIN,/full:/g' \
+                  -e 's/^DOMAIN-KEYWORD,/keyword:/g' | \
+              grep -E '^(domain|full|keyword):' || true)
+            if [ -z "$converted" ]; then
+              continue
+            fi
+            {
+              echo "# custom: rule.yaml (do not overwrite)"
+              echo "$converted"
+            } >> "$dst"
+          done
 
       - name: Checkout MetaCubeX/meta-rules-converter
         uses: actions/checkout@v4
@@ -358,11 +454,11 @@ jobs:
             git init
             git config --local user.name "github-actions[bot]"
             git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git checkout -b meta
+            git checkout -b meta-rule
             git add .
             git commit -m "Released on ${{ env.BUILDTIME }}"
             git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
-            git push -f -u origin meta
+            git push -f -u origin meta-rule
 
 
       - name: Purge jsdelivr CDN
