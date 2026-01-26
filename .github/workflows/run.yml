@@ -298,6 +298,34 @@ jobs:
           echo ipleak.net >> ./data-lite/proxy && echo browserleaks.org >> ./data-lite/proxy
           echo "full:o33249.ingest.sentry.io" >>  ./data-lite/openai
           echo "openai.com" >> ./data-lite/openai
+          set -euo pipefail
+          for src in ./geo-lite/geosite/classical/*.list; do
+            [ -f "$src" ] || continue
+            name=$(basename "$src" .list)
+            dst="./community/data-lite/${name}"
+
+            converted=$(sed -e 's/^DOMAIN-SUFFIX,/domain:/g' \
+                            -e 's/^DOMAIN,/full:/g' \
+                            -e 's/^DOMAIN-KEYWORD,/keyword:/g' "$src" | \
+                        grep -E '^(domain|full|keyword):' || true)
+            [ -n "$converted" ] || continue
+
+            if [ ! -f "$dst" ]; then
+              {
+                echo "# custom: rule.yaml (do not overwrite)"
+                echo "$converted"
+              } > "$dst"
+              continue
+            fi
+
+            if ! grep -q "custom: rule.yaml" "$dst"; then
+              echo "# custom: rule.yaml (do not overwrite)" >> "$dst"
+            fi
+            while IFS= read -r line; do
+              grep -Fxq "$line" "$dst" || echo "$line" >> "$dst"
+            done <<< "$converted"
+          done
+
           go run ./ --datapath=./data-lite --outputname geosite-lite.dat
 
       - name: Get geoip.dat relative files
