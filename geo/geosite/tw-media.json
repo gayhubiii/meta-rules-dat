@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain": [
+        "gamer2-cds.cdn.hinet.net",
+        "gamer-cds.cdn.hinet.net",
+        "ntdfreemobile-tgc.cdn.hinet.net",
+        "ntdfreepc-tgc.cdn.hinet.net",
+        "ntdfreetv-tgc.cdn.hinet.net",
+        "ntdfreevcpc-tgc.cdn.hinet.net",
+        "ntdofifreemobile-tgc.cdn.hinet.net",
+        "ntdofifreepc-tgc.cdn.hinet.net",
+        "ntdofifreetv-tgc.cdn.hinet.net",
+        "ntdofifreevcpc-tgc.cdn.hinet.net"
+      ],
+      "domain_suffix": [
+        "linecorp.com",
+        "nhncorp.jp",
+        "kkbox.com",
+        "kktix.com",
+        "ofiii.com",
+        "linemobile.com",
+        "lin.ee",
+        "line-apps-beta.com",
+        "line-apps-rc.com",
+        "line-apps.com",
+        "linetv.tw",
+        "line-cdn.net",
+        "line-scdn.net",
+        "line.me",
+        "line.biz",
+        "linefriends.com",
+        "kk.stream",
+        "kfs.io",
+        "line-beta.me",
+        "linegame.jp",
+        "gcld-line.com",
+        "linemyshop.com",
+        "lineshoppingseller.com",
+        "litv.tv",
+        "kktv.me",
+        "bahamut.akamaized.net",
+        "bahamut.com.tw",
+        "gamer.com.tw",
+        "line.naver.jp",
+        "kktv.com.tw",
+        "linefriends.com.tw",
+        "kkbox.com.tw",
+        "litvfreepc.akamaized.net",
+        "theater-kktv.cdn.hinet.net"
+      ]
+    }
+  ]
+}
