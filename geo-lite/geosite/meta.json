@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain": "imagine.meta.com",
+      "domain_suffix": "meta.ai"
+    }
+  ]
+}
